@@ -1,0 +1,9 @@
+{
+    "doc": "Earthquake information.",
+    "name": "Earthquake",
+    "namespace": "test",
+    "type": "record",
+    "fields": [
+      #TODO: add your schema definition here
+    ]
+}
