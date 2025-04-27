@@ -2,7 +2,6 @@ import csv
 import fastavro
 from datetime import datetime
 from decimal import Decimal
-from pathlib import Path
 from .convert import Convert
 
 class ConvertCsvToAvro(Convert):
@@ -34,7 +33,7 @@ class ConvertCsvToAvro(Convert):
                 records.append(record)
             
             with open(output_path, 'wb') as out_file:
-                fastavro.writer(out_file, parsed_schema, records)
+                fastavro.writer(out_file, parsed_schema, records, codec=compression)
 
         print(f"AVRO file created successfully at {output_path}")
         return output_path
