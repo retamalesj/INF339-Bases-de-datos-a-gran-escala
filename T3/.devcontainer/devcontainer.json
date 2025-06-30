@@ -14,7 +14,7 @@
 	// "forwardPorts": [],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	 "postCreateCommand": "bash scripts/install-dependencies.sh",
+	"postCreateCommand": "bash scripts/install-dependencies.sh && bash scripts/setup-airflow.sh",
 
 	// Configure tool-specific properties.
 	"customizations": {
