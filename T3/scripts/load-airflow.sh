@@ -3,6 +3,8 @@
 export AIRFLOW_HOME=$(pwd)/.airflow
 mkdir -p $AIRFLOW_HOME
 
+export PYTHONPATH="$(pwd):$PYTHONPATH"
+
 airflow db init
 
 # Ruta dinámica de los DAGs basada en la carpeta actual
@@ -19,6 +21,4 @@ airflow users create \
     --email admin@admin.com \
     --password admin
 
-airflow scheduler &
-
-airflow webserver
+airflow standalone
