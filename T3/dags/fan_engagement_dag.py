@@ -19,7 +19,7 @@ DAG_NAME = 'fan_engagement_etl'
 INPUT_PATH = 'data/fan_engagement.json'
 OUTPUT_PATH = 'output/fan_engagement.avro'
 KAFKA_TOPIC = 'data_notifications'
-KAFKA_BOOTSTRAP_SERVERS = ['localhost:9092']
+KAFKA_BOOTSTRAP_SERVERS = ['kafka:9092']
 
 def notify_kafka():
     producer = KafkaProducer(
