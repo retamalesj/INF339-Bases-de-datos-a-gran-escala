@@ -74,6 +74,6 @@ Create 2 records and show in terminal
 
 ## Sent to a Kafka topic
 
-`python src/random_data_generator.py --output minio --output_path output.json --num_records 2 `
+`python src/random_data_generator.py --output kafka --output_path output.json --num_records 2 `
 
 
