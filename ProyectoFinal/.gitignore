@@ -1,2 +1,6 @@
 __pycache__
 .airflow/logs
+
+
+output/batch/*
+output/streaming/*

@@ -1,6 +1,5 @@
 from VehicleDataGenerator import VehicleDataGenerator
 import argparse
-import json
 import uuid
 import io
 from minio import Minio
