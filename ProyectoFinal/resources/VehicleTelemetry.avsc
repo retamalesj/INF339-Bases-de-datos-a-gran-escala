@@ -1,0 +1,87 @@
+{
+  "type": "record",
+  "name": "VehicleTelemetry",
+  "namespace": "terramearth.vehicletelemetry.avro",
+  "fields": [
+    { "name": "Vehicle_ID", "type": "string" },
+    { "name": "Timestamp", "type": "string" },
+    {
+        "name": "GPS_Coordinates",
+        "type": {
+            "type": "record",
+            "name": "GPS",
+            "fields": [
+                { "name": "Latitude", "type": "double" },
+                { "name": "Longitude", "type": "double" }
+            ]   
+        }
+    },
+    { "name": "Engine_RPM", "type": "int" },
+    { "name": "Engine_Load_Percentage", "type": "int" },
+    { "name": "Fuel_Level_Percentage", "type": "int" },
+    { "name": "Fuel_Consumption_Rate_L_hr", "type": "float" },
+    { "name": "Speed_km_h", "type": "float" },
+    { "name": "Odometer_km", "type": "float" },
+    { "name": "Operating_Hours", "type": "float" },
+    { "name": "Hydraulic_Pressure_psi", "type": "int" },
+    { "name": "Hydraulic_Fluid_Temp_C", "type": "int" },
+    { "name": "Engine_Coolant_Temp_C", "type": "int" },
+    { "name": "Battery_Voltage_V", "type": "float" },
+    { "name": "Gear_Engaged", "type": "string" },
+    { "name": "Accelerator_Pedal_Position_Percentage", "type": "int" },
+    { "name": "Brake_Pedal_Position_Percentage", "type": "int" },
+    {
+      "name": "Diagnostic_Data",
+      "type": ["null", {
+        "type": "record",
+        "name": "DiagnosticData",
+        "fields": [
+          { "name": "Error_Code", "type": ["null", "string"], "default": null },
+          {
+            "name": "Warning_Lights",
+            "type": {
+              "type": "record",
+              "name": "WarningLight",
+              "fields": [
+                { "name": "CheckEngineLight", "type": "string" },
+                { "name": "LowOilPressure", "type": "string" }
+              ]
+            }
+          },
+          {
+                "name": "Component Temperatures_C",
+                "type": {
+                    "type": "record",
+                    "name": "ComponentT",
+                    "fields": [
+                        {"name": "Engine", "type": "int"},
+                        {"name": "Transmission", "type": "int"},
+                        {"name": "HydraulicSystem", "type": "int"}
+                    ]
+                }
+          },
+          {
+            "name": "Vibration",
+            "type": {
+              "type": "record",
+              "name": "Vibration",
+              "fields": [
+                { "name": "Vibration_Index_X", "type": "float" },
+                { "name": "Vibration_Index_Y", "type": "float" },
+                { "name": "Vibration_Index_Z", "type": "float" }
+              ]
+            }
+          },
+          {
+            "name": "Component_Wear_Indicators",
+            "type": {
+              "type": "map",
+              "values": "float"
+            }
+          }
+        ]
+      }],
+      "default": null
+    }
+  ]
+}
